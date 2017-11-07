@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<!--
+	Created by ZK Studio
+-->
+
+<zk>
+	
+	<device-config>
+		<device-type>ajax</device-type>
+		<server-push-class>org.zkoss.zkmax.ui.comet.CometServerPush</server-push-class>
+	</device-config>
+
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri>/timeout.zul</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
+	</device-config>
+	
+	<library-property>
+		<name>org.zkoss.zul.progressbox.position</name>
+			<value>center,center</value>
+		<name>org.zkoss.theme.preferred</name>
+    		<value>sapphire</value>
+	</library-property>
+
+	<client-config>
+		<processing-prompt-delay>300</processing-prompt-delay>
+	</client-config>
+	
+	<listener>
+		<description>Utilizzato per intercettare la chiusura del browser</description>
+		<display-name>RvLogout per aggiornamento utenti</display-name>
+		<listener-class>rvl.gm.utility.PulisciDesktop</listener-class>
+	</listener>
+
+	
+	<session-config>
+		<timer-keep-alive>true</timer-keep-alive>
+	</session-config>
+	
+	<language-config>
+        <addon-uri>/WEB-INF/gmaps.xml</addon-uri>
+    </language-config>
+    
+</zk>
