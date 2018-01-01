@@ -1,0 +1,119 @@
+<!--
+  This file is part of WeCall
+ 
+  Copyright (C) 20017     Luca Ramella Votta
+                          luca.ramellavotta@gmail.com
+  
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  
+-->
+
+<?page title="Accesso applicativo WeCall" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window  id="login" viewModel="@id('vm') @init('rvl.gm.ui._Login')" title="Accesso applicativo WeCall" border="normal" position="center"
+		width="500px" height="800px" mode="overlapped"  closable="true" contentStyle="background-color:#DCDDDF;">
+		
+		<borderlayout height="200px">
+			<center border="0">
+				<borderlayout>
+					<west size="30%" border="0" />
+					
+					<center border="0">
+						<div  vflex="0">
+							<image src="images/_Login.png" />
+						</div>
+					</center>
+					<east size="30%" border="0"/>
+				</borderlayout>
+			</center>
+		</borderlayout>
+		
+		<borderlayout height="140px">
+			<center border="0">
+				<borderlayout>
+					<west size="20%" border="0">
+						<div  vflex="1"/>
+					</west>
+					<center border="0">
+						<div  vflex="1">
+							<textbox id="txtUserName"  placeholder="nome utente" onBlur="@command('caricaTelefoni')" width="80%"/>
+							<separator></separator>
+							<textbox id="txtPasswD"    placeholder="password" type="password" width="80%"/>
+						</div>
+					</center>
+				</borderlayout>
+			</center>
+		</borderlayout>
+		
+		<borderlayout height="180px">
+			<center border="0">
+				<borderlayout>
+					<west size="5%" border="0">
+						<div vflex="1"/>
+					</west>
+					<center border="0">
+						<div  vflex="1">
+							<hlayout valign="middle">
+								<label value="Nazioni" style="color:blue"> </label>
+ 								<combobox id="cmbNazioni" placeholder="nazione" autocomplete="true" 
+									  model="@load(vm.lstNazioni)" selectedItem="@bind(vm.selCmbNazioni)" >
+									<template name="model" var="cmb0">
+										<comboitem label="@load(cmb0.descrizione)" value="@load(cmb0.progressivo)" />
+									</template>
+								</combobox>
+							</hlayout>
+							<separator></separator>
+							<hlayout valign="middle">
+								<label value="Telefoni" style="color:blue"> </label>
+								<combobox id="cmbTelefoni"  placeholder="telefono" autocomplete="true" 
+										  model="@load(vm.lstTelefoni)" selectedItem="@bind(vm.selCmbTelefoni)" >
+									<template name="model" var="cmb1">
+										<comboitem label="@load(cmb1.descrizione)" value="@load(cmb1.descrizione)" />
+									</template>
+								</combobox>
+							</hlayout>
+						</div>
+					</center>
+				</borderlayout>
+			</center>
+		</borderlayout>
+		
+		<borderlayout height="120px">
+			<center border="0">
+				<borderlayout>
+					<west size="30%" border="0">
+						<div  vflex="1"/>
+					</west>
+					<center border="0">
+						<div  vflex="1">
+							<button type="submit" id="btnLogin" label="Login" onClick="@command('onLogin')" width="100px" height="50px" disabled="true" />
+						</div>
+					</center>
+				</borderlayout>
+			</center>
+		</borderlayout>
+		
+		<borderlayout height="30px">
+			<center border="0">
+				<borderlayout>
+					<center border="0">
+						<div align="center"  vflex="1">
+							<label id="lblVersione" value="Versione" ></label>
+						</div>
+					</center>
+				</borderlayout>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

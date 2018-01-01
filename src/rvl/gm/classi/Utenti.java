@@ -10,7 +10,7 @@ public class Utenti
 	String Tipo;
 	String Cognome;
 	String Nome;
-	String Abilitato;
+	Boolean Abilitato;
 	String Interno_telefonico;
 	int Centralino_utilizzato;
 	String Canale_telefonico;
@@ -62,10 +62,10 @@ public class Utenti
 	public void setNome(String nome) {
 		Nome = nome;
 	}
-	public String getAbilitato() {
+	public Boolean getAbilitato() {
 		return Abilitato;
 	}
-	public void setAbilitato(String abilitato) {
+	public void setAbilitato(Boolean abilitato) {
 		Abilitato = abilitato;
 	}
 	public String getInterno_telefonico() {

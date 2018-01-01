@@ -1,0 +1,48 @@
+<!--
+  This file is part of WeCall
+ 
+  Copyright (C) 20017     Luca Ramella Votta
+                          luca.ramellavotta@gmail.com
+  
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+-->
+
+<window width="800px" title="Sessione Scaduta" border="normal" position="center" mode="overlapped">
+	<space></space>
+	<vbox align="center" style="border: 3px solid red;" width="100%">
+		<label style="font-weight:bold;font-family:'Trebuchet MS';font-size:20px;centered;">
+			La pagina richiesta non è più disponibile.
+		</label>
+		<space></space>
+		<label style="font-weight:bold;font-family:'Trebuchet MS';font-size:16px;centered">
+			Questo capita di norma per un timeout oppure per modifiche effettuate sul server.
+		</label>
+	</vbox>
+	<space></space>
+	<borderlayout height="400px">
+		<north border="none" />
+		<center border="none">
+			<div height="100%" width="100%">
+				<hbox width="100%" height="100%" pack="center" align="center">
+					<image src="/images/Crash.jpg" onClick='Executions.sendRedirect("/")' style="cursor:hand;cursor:pointer;"/>
+				</hbox>
+			</div>
+		</center>
+	</borderlayout>
+	<vbox align="center" width="100%">
+		<label style="font-weight:bold;font-family:'Monotype Corsiva';font-size:20px;centered">
+			Clicca sull'immagine per continuare
+		</label>
+	</vbox>
+</window>

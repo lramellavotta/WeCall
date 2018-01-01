@@ -1,0 +1,65 @@
+<!--
+  This file is part of WeCall
+ 
+  Copyright (C) 20017     Luca Ramella Votta
+                          luca.ramellavotta@gmail.com
+  
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  
+  This error form is adapted from LibrePlan (http://www.libreplan.org/)
+-->
+
+<?page title="Error page" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window self="@define(content)" border="normal" width="900px" position="center" mode="overlapped">
+		<vbox apply="rvl.gm.ui._ErrorEvent" width="900px">
+			<panel title="">
+				<panelchildren>
+					<grid width="880px">
+						<columns>
+							<column width="100px" />
+							<column />
+						</columns>
+						<rows>
+							<row>
+								<image src="/images/Error.png"></image>
+								<label value="" />
+							</row>
+							<row>
+								<label value="Errore"/>
+								<label value="${requestScope['javax.servlet.error.message']}" />
+							</row>							
+							<row>
+								<label value="Tipo eccezione" />
+								<label value="${requestScope['javax.servlet.error.exception_type']}" />
+							</row>
+							<row>
+								<label value="Codice" />
+								<label value="${requestScope['javax.servlet.error.status_code']}" />
+							</row>
+							<row>
+								<label value="StackTrace" />
+								<textbox id="stacktrace" rows="20" width="100%" readonly="true" />
+							</row>
+						</rows>
+					</grid>
+					<separator></separator>
+					<hbox style="margin-left:auto; margin-right:auto">
+						<button id="cmdConferma" label="Conferma" onClick="@command('cmdConferma')"/>
+					</hbox>
+				</panelchildren>
+			</panel>
+		</vbox>
+	</window>
+</zk>
